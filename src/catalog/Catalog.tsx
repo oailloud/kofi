@@ -7,7 +7,6 @@ export const Catalog: FC = () => {
     const [coffees, setCoffees] = useState<Coffee[]>([]);
 
     useEffect(() => {
-        console.log("double effect");
         if (coffees.length) return;
         (async () => {
             const _coffees = await catalogService.listCoffees();
@@ -18,7 +17,7 @@ export const Catalog: FC = () => {
     return (
         <ul>
             {coffees.map((coffee) => (
-                <li>{coffee.name}</li>
+                <li key={coffee.id}>{coffee.name}</li>
             ))}
         </ul>
     )

@@ -1,11 +1,10 @@
+import { RouterProvider } from '@tanstack/react-router'
 import './App.css'
-import { Catalog } from './catalog/Catalog'
+import { router } from './routes/routing-config'
+
 
 function App() {
-
-  return (
-    <Catalog />
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App
